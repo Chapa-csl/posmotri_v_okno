@@ -3,7 +3,9 @@
 *::after {
 	box-sizing: border-box;
 }
-
+*:focus {
+	outline: none;
+}
 html {
 	block-size: 100%;
 }
@@ -63,6 +65,7 @@ ol {
 .result__video-container {
 	position: relative;
 	inline-size: 711px;
+	block-size: 386px;
 	margin: 0 0 11px;
 }
 
@@ -107,16 +110,6 @@ ol {
 .search-form__label:has(:focus-visible) {
 	outline: 1px solid #ffffff;
 	outline-offset: 1px;
-}
-
-.visually-hidden {
-	position: absolute;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	inline-size: 1px;
-	block-size: 1px;
-	clip-path: inset(50%);
-	white-space: nowrap;
 }
 
 .search-form__textfield {
@@ -218,7 +211,7 @@ ol {
 
 .content__list {
 	position: relative;
-	overflow-y: scroll;
+	overflow-y: auto;
 	block-size: 298px;
 	scrollbar-width: none;
 }
@@ -273,9 +266,10 @@ ol {
 	color: #ffffff;
 	font-weight: 400;
 	line-height: 16.2px;
+	max-height: 103px;
+	overflow: hidden;
 }
 .content__video-card-thumbnail {
 	inline-size: 194px;
-	block-size: 103px;
 	object-fit: cover;
 }
